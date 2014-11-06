@@ -1,0 +1,21 @@
+---
+layout: patchroll
+title:  "Патчи"
+alias:  /patches
+---
+<h1>Патчи</h1>
+
+<ul class="large-block-grid-2">
+  {% for post in site.categories.patch %}
+    {% if post.categories contains 'patch' %}
+      <li>
+        <article class="patch">
+          <a class="th radius" href="{{ post.url }}">
+            <header><h4>{{ post.title }}</h4></header>
+            <section><p>{{ post.p_descr }}</p></section>
+          </a>
+        </article>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

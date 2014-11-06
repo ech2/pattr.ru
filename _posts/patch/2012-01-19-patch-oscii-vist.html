@@ -1,0 +1,21 @@
+---
+layout:     patchpost
+title:      "OSCII – Vist"
+date:       2012-01-19 23:22:22
+categories: patch
+author:     "OSCII"
+permalink:  /patches/oscii-vist.html
+alias:      /patches/oscii-vist
+p_descr:    "Алгоритмический секвенсор на основе сети счетчиков."
+p_img:      oscii-vist.png
+p_file:     oscii-vist.pd.zip
+---
+
+<p>
+  Сердцем патча является субпатч <strong>[pd network]</strong>. Это сеть из счетчиков, которые посылают друг в друга бэнги,
+  когда их текущее значение равно единице. Создавая из них сложную сеть и ранжируя максимальное
+  значение каждого из них, можно получать интересные генеративные секвенции.
+  Идея взята из VST плагина Damage Audio Axom, там это называется нейросетью,
+  хотя это в корне не верно.</p>
+
+<p><img src="/img/patch/{{ page.p_img }}" /></p>

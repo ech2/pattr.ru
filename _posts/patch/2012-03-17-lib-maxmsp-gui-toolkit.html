@@ -1,0 +1,45 @@
+---
+layout:     patchpost
+title:      "GUI Toolkit (Max/MSP)"
+date:       2012-03-17 11:00:08
+categories: patch
+author:     "OSCII"
+permalink:  /patches/oscii-gui-toolkit.html
+p_descr:    "Набор готовых модулей, для быстрого прототипирования в Max/MSP."
+p_img:      oscii-gui-toolkit.png
+p_file:     oscii-gui-toolkit.zip
+---
+
+<p>Набор готовых модулей, созданных OSCII для быстрого прототипирования
+  во время подготовки интерактивных перфомансов. Основная идея — отказаться от использования Max4Live и Ableton Live, так как их настройка отнимает много времени и
+  сил.</p>
+
+<p>Патчи сделаны в&nbsp;виде Max/MSP абстракций для использования вместе с&nbsp;объектом <strong>bpatcher</strong>. Чтобы
+  добавить девайс в&nbsp;патч, создайте объект <strong>[bpatcher&nbsp;@name&nbsp;%имя_девайса%]</strong>.</p>
+
+<p>Каждый девайс имеет небольшой хелп, который вызывается по&nbsp;кнопке <em>&laquo;?&raquo;</em>. Там присутствует
+  краткое описание устройства, описание инлетов и&nbsp;аутлетов, а&nbsp;также сообщения, с&nbsp;помощью которых можно
+  управлять параметрами.</p>
+
+<p><strong>eq4m&nbsp;</strong>&mdash; четырехполосный моно эквалайзер<br />
+  <strong>eq4s&nbsp;</strong>&mdash; четырехполосный стерео эквалайзер<br />
+  <strong>grainpos&nbsp;</strong>&mdash; гранулятор с&nbsp;ручным контролем позиции гранул<br />
+  <strong>grainline&nbsp;</strong>&mdash; гранулятор с&nbsp;line~ контролем позиции гранул<br />
+  <strong>limiter&nbsp;</strong>&mdash; лимитер<br />
+  <strong>mdelay&nbsp;</strong>&mdash; моно дилэй<br />
+  <strong>sdelay&nbsp;</strong>&mdash; стерео дилэй<br />
+  <strong>mix4m&nbsp;</strong>&mdash; четырехканальный моно микшер<br />
+  <strong>mix8m&nbsp;</strong>&mdash; восьмиканальный моно микшер<br />
+  <strong>nsq16&nbsp;</strong>&mdash; <nobr>16-шаговый</nobr> числовой секвенсор<br />
+  <strong>quadfader&nbsp;</strong>&mdash; девайс делает кроссфейд четырех каналов<br />
+  <strong>quadpanner&nbsp;</strong>&mdash; панарамирование на&nbsp;четыре канала<br />
+  <strong>samplay&nbsp;</strong>&mdash; простой проигрыватель сэмплов<br />
+  <strong>utility&nbsp;</strong>&mdash; аналог аблетоновского девайса: громкость, панорама, моно/стерео
+</p>
+
+<p>Абстракции, использующиеся в&nbsp;девайсах:<br />
+  <strong>oi.mpan~</strong> &mdash; моно панарамирование<br />
+  <strong>oi.pan~</strong> &mdash; стерео панарамирование<br />
+  <strong>oi.xfade~</strong> &mdash; кроссфейд двух сигналов
+</p>
+<p><img src="/img/patch/{{ page.p_img }}"/></p>

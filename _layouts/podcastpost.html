@@ -1,0 +1,34 @@
+---
+layout: podcastroll
+---
+<h1>{{ page.title }}</h1>
+<article class="post">
+  <section>
+    <iframe width="100%" height="180"
+            src="//www.mixcloud.com/widget/iframe/?feed={{ page.mixcloud }}&mini=&stylecolor=&hide_artwork=1&embed_type=widget_standard&embed_uuid=69f8ff63-6eb9-4c6f-b079-d511e64899ac&hide_tracklist=1&hide_cover=1"
+            frameborder="0"></iframe>
+
+    {{ content }}
+  </section>
+
+  <footer>
+    <a href="/f/patch/{{ page.p_file }}">Скачать MP3 320</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{ page.mixcloud }}" target="_blank">Mixcloud</a>
+    <span>{{ page.date | date_to_string }}</span>
+  </footer>
+
+    <br />
+    <br />
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'pattr';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</article>

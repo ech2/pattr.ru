@@ -1,0 +1,7 @@
+name: Pattr.ru
+markdown: redcarpet
+highligher: true
+paginate: 5
+sass:
+    sass_dir: _scss
+    style: compressed

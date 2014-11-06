@@ -1,0 +1,29 @@
+$body-font-color: #333;
+
+$primary-color: #2ba6cb;
+$secondary-color: #e9e9e9;
+$alert-color: #c60f13;
+$success-color: #5da423;
+
+$anchor-text-decoration: underline;
+$anchor-font-color: $body-font-color;
+$anchor-font-color-hover: lighten($body-font-color, 20);
+
+$paragraph-font-family: inherit;
+$paragraph-font-weight: normal;
+$paragraph-font-size: 1em;
+$paragraph-line-height: 1.5;
+$paragraph-margin-bottom: em-calc(20);
+$paragraph-aside-font-size: em-calc(14);
+$paragraph-aside-line-height: 1.35;
+$paragraph-aside-font-style: italic;
+$paragraph-text-rendering: optimizeLegibility;
+
+$small-font-size: 80%;
+
+$small-screen: 850px;
+
+$thumb-box-shadow-hover: 0 0 6px 1px $code-color;
+
+$pagination-link-current-background: $code-color;
+$pagination-link-current-active-bg: $code-color;

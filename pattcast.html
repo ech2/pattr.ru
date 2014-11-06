@@ -1,0 +1,24 @@
+---
+layout: podcastroll
+title:  "Подкаст"
+---
+<h1>Подкаст</h1>
+
+<p class="id_podcast-descr">PattCast — это подкаст, состоящий из музыки читателей и друзей сайта <a href="http://pattr.ru">pattr.ru</a>.
+  Если вы хотите услышать свою музыку в этом подкасте, отправляйте ссылки на композиции
+  в lossless-формате на почту: pattr [doggy] oscii.ru</p>
+
+<ul>
+  {% for post in site.categories.podcast %}
+  {% if post.categories contains 'podcast' %}
+  <li>
+    <article>
+      <strong>{{ post.title }}</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{{ post.url }}">Cлушать на сайте</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="{{ post.mp3 }}">Скачать в MP3 320</a>
+
+    </article>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
