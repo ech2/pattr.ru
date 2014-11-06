@@ -7,6 +7,11 @@ layout: base
 
   <footer>
     {% if paginator %}
+      {% assign total_pages = site.categories.blog | size | divided_by: paginator.per_page %}
+      {% assign mod = site.categories.blog | size | modulo: paginator.per_page %}
+      {% if mod != 0 %}
+        {% assign total_pages = total_pages | plus: 1 %}
+      {%endif %}
       <ul>
         {% if paginator.previous_page %}
           {% if paginator.previous_page == 1 %}
@@ -22,7 +27,7 @@ layout: base
           <li><a href="/">1</a></li>
         {% endif %}
 
-        {% for count in (2..paginator.total_pages) %}
+        {% for count in (2..total_pages) %}
           {% if count == paginator.page %}
             <li class="current"><a href="">{{ count }}</a></li>
           {% else %}
@@ -30,7 +35,7 @@ layout: base
           {% endif %}
         {% endfor %}
 
-        {% if paginator.next_page %}
+        {% if paginator.next_page and paginator.page != total_pages %}
             <li class="arrow"><a href="{{ paginator.next_page_path }}">&rarr;</a></li>
         {% endif %}
       </ul>

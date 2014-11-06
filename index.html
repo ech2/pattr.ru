@@ -4,8 +4,14 @@ title:  "Последние посты блога"
 ---
 <h1>Последние посты блога</h1>
 
-{% for post in paginator.posts %}
-    {% if post.categories contains 'blog' %}
+{% assign num_posts = site.categories.blog | size %}
+{% assign iter = 0  %}
+
+{% assign more_than = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign less_than = paginator.page | minus: 1 | times: paginator.per_page | plus: paginator.per_page %}
+
+{% for post in site.categories.blog %}
+    {% if iter >= more_than and less_than > iter  %}
       <article class="post">
         <header>
           <h2>
@@ -31,4 +37,5 @@ title:  "Последние посты блога"
         </footer>
       </article>
   {% endif %}
+  {% assign iter = iter | plus: 1 %}
 {% endfor %}
