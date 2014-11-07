@@ -6,7 +6,6 @@ categories: blog
 author:     "OSCII"
 permalink:  /distortion-waveshaping-in-maxmsp.html
 alias:      /blog/distortion-waveshaping-effekty-v-maxmsp
-attach:     maxmsp-distortion-waveshaping.zip
 ---
 
 <p>
@@ -48,7 +47,7 @@ attach:     maxmsp-distortion-waveshaping.zip
   Здесь переменная <strong><em>а</em></strong> &ndash; управляет степенью искажения сигнала, а входящий сигнал
   представлен в виде переменной <strong><em>x</em></strong>. Теперь реализуем это в максе:</p>
 
-<p><img alt="Первый патч" src="/img/waveshaping_1/one.png"/></p>
+<p><img alt="Первый патч" src="https://cloud.githubusercontent.com/assets/1007225/4955897/5e5e1d82-6698-11e4-9621-11114ab2cb99.png"/></p>
 
 <p>
   Здесь роль if выполняет конструкция из объектов <strong>&gt;~</strong>, <strong>+~</strong> и
@@ -79,7 +78,7 @@ attach:     maxmsp-distortion-waveshaping.zip
   Автор кода отмечает, что значение <em>amount</em> должно быть в диапазоне -1&hellip;1. Разумеется, не надо ставить
   <em>amount</em> равным 1, в этом случае будет деление на ноль. Здесь у нас входящий сигнал &ndash; <strong>x</strong>.</p>
 
-<p><img alt="Второй патч" src="/img/waveshaping_1/two.png" /></p>
+<p><img alt="Второй патч" src="https://cloud.githubusercontent.com/assets/1007225/4955896/5e5d7076-6698-11e4-8e43-43c5f60556f7.png" /></p>
 <p>
   Здесь ничего сложного нет, внимательно изучив патч и сопоставив его с формулой, можно легко разобраться, как все
   работает.</p>
@@ -94,7 +93,7 @@ attach:     maxmsp-distortion-waveshaping.zip
 
 <p>
   Он же в максе:</p>
-  <p><img alt="Третий патч" src="/img/waveshaping_1/three.png"/></p>
+  <p><img alt="Третий патч" src="https://cloud.githubusercontent.com/assets/1007225/4955899/5e65fb38-6698-11e4-8b3a-651d17898e02.png"/></p>
 <p>
   Сигнал искажается при параметре <em>amount &nbsp;&gt; 1</em>. Я же заметил странный эффект (по крайней мере, на
   синусоиде) когда amount находится в диапазоне <em>-1&hellip;0</em>. Пробуйте, экспериментируйте и будет счастье! :)
@@ -150,7 +149,7 @@ attach:     maxmsp-distortion-waveshaping.zip
   передаточную функцию, вместо этого создадим небольшой сабпатч, который будет на основе двух предыдущих гармоник
   генерировать новую.</p>
 
-  <p><img alt="Рекурсия" src="/img/waveshaping_1/recur.png" /></p>
+  <p><img alt="Рекурсия" src="https://cloud.githubusercontent.com/assets/1007225/4955898/5e64508a-6698-11e4-9d20-96a229950dcc.png" /></p>
 <p>
   В первый инлет подается предыдущая гармоник, во второй &ndash; стоящая перед предыдущей, а в третий &ndash; не
   измененный входящий сигнал. Как видно, этот субпатч просто реализует рекуррентное соотношение
@@ -162,7 +161,7 @@ attach:     maxmsp-distortion-waveshaping.zip
   Теперь из этих блоков создадим патч, позволяющий добавлять вплоть до восьмой гармоники (высокочастотный фильтр в конце
   цепочки убирает DC offset):</p>
 
-<p><img alt="Готовый полином восьмой степени" src="/img/waveshaping_1/polynominal.png" /></p>
+<p><img alt="Готовый полином восьмой степени" src="https://cloud.githubusercontent.com/assets/1007225/4955895/5e551d5e-6698-11e4-9442-310553ce7e6f.png" /></p>
 <p>
   Этот патч позволяет регулировать амплитуду добавляемых гармоник, это можно использовать для эмуляции аналоговых
   устройств. Так, многие ламповые дисторшены, в основном добавляют четные гармоники, нечетные в них появляются только

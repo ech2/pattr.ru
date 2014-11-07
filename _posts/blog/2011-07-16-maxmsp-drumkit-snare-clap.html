@@ -6,7 +6,6 @@ categories: blog
 author: "OSCII"
 permalink: /drum-synthesis-in-maxmsp-snare-clap.html
 alias: /blog/chast-2-snare-and-clap
-attach: maxmsp-drumsynth-snare-clap.zip
 ---
 
 <p>
@@ -14,7 +13,7 @@ attach: maxmsp-drumsynth-snare-clap.zip
   головки (вибрирующие мембраны). На нижней натянуты струны, о которые бьется мембрана после удара барабанщика. На фото
   ниже они как раз показаны.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/snare/drumsynth-snareclap.jpg"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955806/d879151e-6697-11e4-8782-aa7e97ae5708.jpg"/></p>
 
 
 <p>
@@ -35,7 +34,7 @@ attach: maxmsp-drumsynth-snare-clap.zip
   Domain Display Value (X-Asis)</i> на <i>200</i>, чтобы не приходилось мельтешить при редактировании огибающей. Он
   задает длину всей огибающей в пределах рамки объекта на <i>200 мс</i>. Результат:</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/snare/snr1.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955803/d86ce884-6697-11e4-9399-5e9c48d0f23f.png"/></p>
 <p>
   Не очень похоже на снейр, не правда ли? :) Ничего, сейчас добавим шума, и все будет круто. Фильтровать будем с помощью
   объекта <b>lores~</b>, это резонантный <i>lowpass </i>фильтр. В левый вход подается сигнал, который нужно фильтровать,
@@ -43,13 +42,13 @@ attach: maxmsp-drumsynth-snare-clap.zip
   это не беда: <i>LP</i> легко превращается в <i>HP</i>. Для этого нужно вычесть из оригинального сигнала
   отфильтрованный <i>LP</i>. Вот так это выглядит в максе:</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/snare/hipasslopass.png"/>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955805/d875be8c-6697-11e4-857f-5380d9ac7a9f.png"/>
 </p>
 <p>
   Итак, строим окончательную версию патча. Обратите внимание на путь сигнала между фильтрами. Также я увеличил значение
   <i>X-Asis в function</i> до <i>500</i>, т. к. шум затухает гораздо медленнее мембраны.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/snare/snr2.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955804/d87068ec-6697-11e4-9bb7-9a2804cf0b38.png"/></p>
 <p>
   Вот теперь это точно снейр :) В статье описан самый базовый алгоритм, есть множество способов разнообразить звук:
   использовать более креативные огибающие на фильтры, заменить два треугольника двумя же синусоидами, промодулированными
@@ -72,7 +71,7 @@ attach: maxmsp-drumsynth-snare-clap.zip
   &laquo;Реверберация&raquo; представляет собой отфильтрованный с помощью <i>LPF</i> белый шум. Замечу, что в нашем
   случае модулятором cutoff и амплитуды является один объект function.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/snare/clap1.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955802/d8647532-6697-11e4-83b8-fc599c355193.png"/></p>
 <p>
   <b>Важно</b>: внимательный читатель мог заметить, что к каждому объекту <b>function</b> присоединено сообщение вида
   <b>(domain <i>число</i>)</b>. Оно регулирует параметр <i>X-Axis</i>, то есть продолжительность огибающей в

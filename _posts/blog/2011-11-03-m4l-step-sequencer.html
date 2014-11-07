@@ -6,14 +6,13 @@ categories: blog
 author:     "OSCII"
 permalink:  /step-sequencer-with-max4live.html
 alias:      /blog/delaem-step-sekvensor-s-pomoshchyu-max4live
-attach:     m4l-simple-step-sequencer.zip
 ---
 
 <p>Как всегда перед практической частью небольшой обзор предстоящей работы. Для генерации мелодии с помощью
   степ-секвенсоров необходимо задать три вещи: ритм, номера и длительности нот. Обычно все это задается с помощью одного
   матричного интерфейса:</p>
 
-<p>><img src="http://pattr.ru/img/seq-m4l/sqgrid.png" alt="Сетка секвенсора"/></p>
+<p>><img src="https://cloud.githubusercontent.com/assets/1007225/4956064/8eec05a8-6699-11e4-8032-2cac9337593f.png" alt="Сетка секвенсора"/></p>
 
 <p>Здесь длина ноты зависит от темпа и условно равняется одному шагу, а ритм и тональность задаются одновременно. Но это
   не наш способ. Мы для каждого из параметров создадим свой небольшой секвенсор.</p>
@@ -25,12 +24,12 @@ attach:     m4l-simple-step-sequencer.zip
   effect</em> и добавим в новый патч следующие объекты: <strong>multislider</strong>, <strong>counter </strong>и
   <strong>metro </strong>и соединим все как показано на рисунке<em> (rhythm1.amxd)</em>:</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/rhythm1.png" alt="rhythm1"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956060/8ecb8bf2-6699-11e4-8d38-838f537fada5.png" alt="rhythm1"/></p>
 
 <p>Думаю, по комментариям можно разобраться, как все работает. Двигаемся дальше. Надо визуально отобразить текущую
   позицию секвенции. С этим нам поможет объект <strong>slider </strong><em>(rhythm2.amxd)</em>:</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/rhythm2.png" alt="rhythm2"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956061/8ecc3a20-6699-11e4-9ed3-332b243b26dd.png" alt="rhythm2"/></p>
 
 <p>На первый взгляд может быть не понятно, почему диапазон слайдера <em>0...17</em>, а не <em>0...16</em>. Дело в том,
   что наш ритм представлен в виде прямоугольлников, а слайдер - это полоска, которая должна совпадать с левым краем
@@ -41,7 +40,7 @@ attach:     m4l-simple-step-sequencer.zip
   <strong>rslider</strong>. Он похож на обычный слайдер, только задает диапазон. У него два аутлета: левый выводит
   минимальное значение, а правый максимальное<em> (rhythm3.amxd)</em>:</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/rhythm3.png" alt="rhythm3"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956058/8ec45f30-6699-11e4-9e90-7371f5369de1.png" alt="rhythm3"/></p>
 
 <h2>Секвенсор мелодии</h2>
 
@@ -49,7 +48,7 @@ attach:     m4l-simple-step-sequencer.zip
   максовского объекта <strong>number</strong>, только имеет внешний вид нативных элементов интерфейса лайва, а также
   некоторые другие плюшки (о которых позже). Итак, собираем следующую схему (melody1.amxd):</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/melody1.png" width="800" alt="melody1"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956059/8ecb2a40-6699-11e4-94bf-87e49c3b6bec.png" width="800" alt="melody1"/></p>
 
 <p>Я по-максимуму откомментил патч, чтобы легче было разобраться, так что думаю, нет нужды досконально описывать работу.
   Если возникнут вопросы, то задавайте их в комментариях.</p>
@@ -58,14 +57,14 @@ attach:     m4l-simple-step-sequencer.zip
 
 <p>Этот секвенсор ничем не отличается от предыдущего, только вместо нот, live.numbox будут задавать длины нот в
   миллисекундах в диапазоне <em>0...1000</em> <em>(length1.amxd)</em>:</p>
-<p><img src="http://pattr.ru/img/seq-m4l/length1.png" width="800" alt="length1"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956057/8ebfeacc-6699-11e4-8ea2-8a16df439e8f.png" width="800" alt="length1"/></p>
 
 
 <h2>Соединяем все вместе и создаем MIDI сообщения</h2>
 
 <p>Итак, теперь соединяем все это <em>(mainseq.amxd)</em>:</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/mainseq.png" width="800" alt="mainseq"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956062/8ed53fda-6699-11e4-846b-8b7eff536279.png" width="800" alt="mainseq"/></p>
 
 <p>По умолчанию, стандартные <em>gui </em>объекты макса не сохраняют свое состояние с сессией лайва, в отличие от <em>gui </em>объектов
   <strong>live.*</strong>, именно поэтому к некоторым элементам интерфейса подсоединены объекты <strong>pattr</strong>.
@@ -75,7 +74,7 @@ attach:     m4l-simple-step-sequencer.zip
   выделяем все объекты интерфейса, кликаем правой кнопкой и нажимаем Add to presentation. Теперь можно включить режим
   презентации, где расставляем все, как удобно. Вот что получилось у меня <em>(step-seq-pattr.amxd)</em>:</p>
 
-<p><img src="http://pattr.ru/img/seq-m4l/step-seq-pattr.png" alt="step-seq-pattr"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956063/8ee7ba7a-6699-11e4-967a-e2d924626173.png" alt="step-seq-pattr"/></p>
 
 <p>Да, вот еще. При добавлении этого патча в лайв он открывался в режиме презентации, нужно открыть patcher inspector,
   щелнув правой кнопкой мыши на пустом месте в патче и отметить чекбокс "open in presentation".</p>

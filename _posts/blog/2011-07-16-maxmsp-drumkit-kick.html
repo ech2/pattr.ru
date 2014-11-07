@@ -6,7 +6,6 @@ categories: blog
 author: "OSCII"
 permalink: /drum-synthesis-in-maxmsp-kick.html
 alias: /blog/chast-1-bochka
-attach: maxmsp-drumsynth-kick.zip
 ---
 
 <p>
@@ -73,18 +72,18 @@ attach: maxmsp-drumsynth-kick.zip
 <p>
   Вот результат <i>(kick1.maxpat)</i>. Нажмите на большую кнопку, чтобы услышать звук.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/kick/kick1.png" style="width: 458px; height: 526px;"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955722/551a7532-6697-11e4-89c5-08e0d6349dd2.png" style="width: 458px; height: 526px;"/></p>
 <p>
   Уже похоже на бочку, не правда ли? Но ей определенно нужна огибающая громкости. Для ее создания мы будем использовать
   пару из объектов <b>function </b>и <b>line~</b>. Выход из <b>line~</b> нужно перемножить с сигналом, выходящим из <b>cycle~</b>
   (kick2.maxpat).</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/kick/kick2.png" style="width: 549px; height: 524px;"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955723/551c2e40-6697-11e4-885a-787c3e59aa7d.png" style="width: 549px; height: 524px;"/></p>
 <p>
   Вот и все. Я обычно умножаю выход огибающей на саму себя, чтобы она изменялась экспоненциально. Вот окончательная
   версия патча <i>(kick3.maxpat)</i>:</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/kick/kick3.png" style="width: 521px; height: 514px;"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955724/5520719e-6697-11e4-82eb-8b80916c92f0.png" style="width: 521px; height: 514px;"/></p>
 <p>
   В следующей статье мы будем создавать снейры и, может быть, что-нибудь еще, посмотрим :)</p>
 <h2>
@@ -95,6 +94,6 @@ attach: maxmsp-drumsynth-kick.zip
   заменяется <b>osc~</b>. Ну и, разумеется, стандартные недостатки пд в виде сброса всех настроек и отсутствия подобия
   объекта preset.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/kick/pdkick.png" style="width: 691px; height: 543px;"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955721/5518b8f0-6697-11e4-86af-b9b621f37e62.png" style="width: 691px; height: 543px;"/></p>
 
 

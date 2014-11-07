@@ -39,7 +39,7 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   объекты <strong>store</strong> и&nbsp;<strong>storage</strong> соответственно. Все это должно выглядеть примерно так:
 </p>
 
-<p><img src="/img/pd-preset/1.png" alt="Presets PureData. Представляем, как все будет"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956107/dd8d91fe-6699-11e4-9e77-a33e28f86b81.png" alt="Presets PureData. Представляем, как все будет"/></p>
 
 <p>Объект <strong>store</strong> будет хранить текущее, а&nbsp;также присваивать новое значение числовому боксу. Именно
   поэтому эти объекты соединены между собой таким образом. С&nbsp;помощью сообщения <em>&laquo;save&raquo;</em> <strong>storage</strong>
@@ -60,7 +60,7 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   Подробнее о&nbsp;том, как он&nbsp;работает, можно прочитать в&nbsp;хелпе, а&nbsp;сейчас приступим к&nbsp;созданию
   объектов.</p>
 
-<p><img src="/img/pd-preset/2.png" alt="Presets PureData. Первые наброски."/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956106/dd8a9c92-6699-11e4-991d-7d90c14f591b.png" alt="Presets PureData. Первые наброски."/></p>
 
 <p>На&nbsp;картинке выше сделан скрин с&nbsp;комментариями трех открытых патчей. <strong>root&nbsp;</strong>&mdash; это
   тестовый патч, в&nbsp;котором мы&nbsp;будем проверять работу <strong>store </strong>и&nbsp;<strong>storage</strong>. В&nbsp;прицнипе,
@@ -90,7 +90,7 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   файле, чтобы впоследствии можно было восстановить данные в&nbsp;нужные gui объекты. Мы&nbsp;сделаем что-то похожее и&nbsp;сделаем
   это хитро. Взглянем на&nbsp;скриншот:</p>
 
-<p><img src="/img/pd-preset/3.png" alt="Presets PureData. Работаем с несколькими числовыми боксами."/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956108/dd8ded70-6699-11e4-9b19-f9eda69c4441.png" alt="Presets PureData. Работаем с несколькими числовыми боксами."/></p>
 
 <p>Как видно, в&nbsp;патче <em>root.pd</em> теперь три числовых бокса соединены с&nbsp;тремя объектами <strong>[store
   one]</strong>, <strong>[store two]</strong> и&nbsp;<strong>[store three]</strong>. Каждому сохраняемому параметру дано
@@ -138,7 +138,7 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   для остальных типов данных. Переименуем наш <strong>store</strong> в&nbsp;<strong>sfloat</strong> и&nbsp;создадим
   объект <strong>slist</strong>.</p>
 
-<p><img src="/img/pd-preset/4.png" alt="Presets PureData. Сохраняем списки (lists)"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956104/dd7d3dcc-6699-11e4-91bd-8deccde0a393.png" alt="Presets PureData. Сохраняем списки (lists)"/></p>
 
 <p>Это немного измененный патч <strong>sfloat.pd</strong>, адаптированный для списков.</p>
 
@@ -152,7 +152,7 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   preset.txt&raquo; и&nbsp;&laquo;write preset.txt&raquo;, а&nbsp;именно менять имена файлов для соответствующих
   пресетов. Взглянем на&nbsp;модифицированный <strong>storage.pd</strong>:</p>
 
-<p><img src="/img/pd-preset/5.png" alt="Presets PureData. Реализуем работу с несколькими пресетами."/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956109/dd8fad4a-6699-11e4-8a1c-ef0e14b49213.png" alt="Presets PureData. Реализуем работу с несколькими пресетами."/></p>
 
 <p>Здесь появился новый объект: <strong>makefilename</strong>. Он&nbsp;как раз создан для генерации имен файлов и&nbsp;идеально
   нам подходит. При поступлении числа в&nbsp;инлет, объект выводит сообщение вида <em>&laquo;preset-%i.txt&raquo;</em>,
@@ -166,11 +166,11 @@ alias:      /blog/sozdaem-menedzher-presetov-v-puredata
   Размеры и&nbsp;позиция прямоугольника задаются в&nbsp;окне <em>canvas</em> с&nbsp;помощью параметров <em>size</em> и&nbsp;<em>margin</em>.
 </p>
 
-<p><img src="/img/pd-preset/6.png" alt="Presets PureData. Делаем GUI."/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956105/dd84661a-6699-11e4-8fa5-aa1114306675.png" alt="Presets PureData. Делаем GUI."/></p>
 
 <p>Вот так теперь выглядит объект <strong>storage</strong> в&nbsp;патче:</p>
 
-<p><img src="/img/pd-preset/7.png" alt="Presets PureData. Окончательный вариант объекта [storage]."/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956110/dd9cf572-6699-11e4-96ec-4361100b7a16.png" alt="Presets PureData. Окончательный вариант объекта [storage]."/></p>
 
 <p>Теперь <em>Pd</em>&nbsp;стала немного удобнее :)</p>
 

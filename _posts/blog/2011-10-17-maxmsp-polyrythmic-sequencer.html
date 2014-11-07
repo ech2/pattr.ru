@@ -6,12 +6,11 @@ categories: blog
 author:     "OSCII"
 permalink:  /polyrythmic-sequencer-with-maxmsp.html
 alias:      /blog/sekvensor-dlya-poliritmov-v-maxmsp
-attach:     maxmsp-polyrythmic-sequencer.zip
 ---
 
 <p>Что я знаю о полиритмах? Не особо много; кажется, это когда одновременно играют два или более ритма разных размеров,
   причем проигрываются они за одно и то же время. Приведу картинку для наглядности.</p>
-<img src="/img/polyrhythms/01.png" alt="Два ритма разных размеров проигрваются за одно время"/>
+<img src="https://cloud.githubusercontent.com/assets/1007225/4956014/383a142a-6699-11e4-8ea8-ad356520667b.png" alt="Два ритма разных размеров проигрваются за одно время"/>
 
 <p>Этот прием используется в этнической музыке жителей африканского континента, а также многими хорошими барабанщиками.
   В этой статье будет описываться способ, который я использую для генерации таких ритмов.</p>
@@ -22,7 +21,7 @@ attach:     maxmsp-polyrythmic-sequencer.zip
   <em>0</em> — тишина. Общее количество элементов определяет длину ритма. В максе представить ритм таким способом легче
   всего с помощью сообщений:</p>
 
-<p><img src="/img/polyrhythms/02.png" alt="Ритмы представленные в виде набора нулей и единиц"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956015/383b76e4-6699-11e4-83b0-edfe13aff742.png" alt="Ритмы представленные в виде набора нулей и единиц"/></p>
 
 <p>В первом ритме <em>16 </em>элементов, во втором — <em>10</em>. Проигрывать их мы будем с помощью объекта
   <strong>seq~</strong>. Он работает следующим образом: мы последовательно забиваем события, для каждого из которых
@@ -37,7 +36,7 @@ attach:     maxmsp-polyrythmic-sequencer.zip
   <em>(seqhowto.maxpat)</em>.
 </p>
 
-<p><img src="/img/polyrhythms/03.png" alt="Надеюсь, этот патч поможет"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956010/382bf412-6699-11e4-9fb8-e4bd21b4d566.png" alt="Надеюсь, этот патч поможет"/></p>
 
 <p>Идем далее. На данный момент нам требуется вбить последовательность из единиц и нулей в объект
   <strong>seq~</strong>. Для этой цели некоторое время назад я создал небольшую <em>абстракцию </em>под названием
@@ -48,7 +47,7 @@ attach:     maxmsp-polyrythmic-sequencer.zip
   <em>reusable code</em>. Абстракции имеют то же расширение
   <em>.maxpat</em> и могут быть добавлены точно также, как и объекты.</p>
 
-<p><img src="/img/polyrhythms/04.png" alt="Внутренности rtoseq"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956012/38310b3c-6699-11e4-9599-db47bd5f7f94.png" alt="Внутренности rtoseq"/></p>
 
 <h2>Принцип работы</h2>
 
@@ -58,7 +57,7 @@ attach:     maxmsp-polyrythmic-sequencer.zip
   тот сможет разобрать что к чему за 15 минут.
   Итак, взглянем на следующий патч <em>(polyrhythms01.maxpat)</em>:</p>
 
-<p><img src="/img/polyrhythms/05.png" alt="polyrhythms01.maxpat"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956011/383003fe-6699-11e4-9aa2-bc6e6666de35.png" alt="polyrhythms01.maxpat"/></p>
 
 <p>При нажатии на сообщение, объект <strong>rtoseq </strong>«забивает» ритм в объекты <strong>seq~</strong>, сигнал из
   <strong>phasor~</strong> управляет выводом сохраненных в <strong>seq~</strong> сообщений. Сообщение <em>(play 1, seq
@@ -67,7 +66,7 @@ attach:     maxmsp-polyrythmic-sequencer.zip
 <p>Однако задание ритма напрямую через сообщение не очень удобно, поэтому мы сделаем небольшой интерфейс <em>(polyrhythms02.maxpat)</em>.
 </p>
 
-<p><img src="/img/polyrhythms/06.png" alt="polyrhythms02.maxpat"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4956013/383534a0-6699-11e4-8895-6de85e607e7f.png" alt="polyrhythms02.maxpat"/></p>
 
 <p>Объект <strong>multislider </strong>при каждом редактировании посылает через <em>левый аутлет </em>список значений всех слайдеров. Сообщение <em>(size&nbsp;$1)</em> меняет количество слайдеров. В инспекторе объекта сделаны следующие изменения:</p>
 

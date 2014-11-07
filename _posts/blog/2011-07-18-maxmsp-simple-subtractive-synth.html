@@ -6,7 +6,6 @@ categories: blog
 author:     "OSCII"
 permalink:  /simple-subtractive-synth-in-maxmsp.html
 alias:      /blog/sozdaem-prostoy-subtraktivnyy-sintezator-v-maxmsp
-attach:     maxmsp-simple-subtractive-synth.zip
 ---
 
 <p>
@@ -14,7 +13,7 @@ attach:     maxmsp-simple-subtractive-synth.zip
   мы и займемся в этой статье. Схема синтезатора представлена на схеме ниже. Вообще, если делаете какой-нибудь алгоритм,
   лучше его нарисовать на бумаге, так будет легче собирать патч впоследствии.</p>
 
-<p><img src="/img/simple-synth/scheme.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955873/2bff6846-6698-11e4-9ef7-36dbf6b70e2c.png"/></p>
 <h2>
   Осцилляторы</h2>
 <p>
@@ -22,7 +21,7 @@ attach:     maxmsp-simple-subtractive-synth.zip
   зачем? У нас же субтрактивный синт, с помощью которого обычно получают жирные тембры. Вот так будет выглядеть
   осциллятор <em>(</em><em>oscil.maxpat)</em>:</p>
 
-<p><img src="/img/simple-synth/oscil1.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955872/2bf07f66-6698-11e4-9e67-ee82b70010bf.png"/></p>
 <p>
   Здесь видно три четыре осциллятора: <strong>saw~</strong>, <strong>tri~</strong>, <strong>rect~</strong> и <strong>noise~</strong>,
   соответственно для пилы, треугольника, квадрата и белого шума. Сигналы из этих объектов поступают на входы <strong>selector~</strong>.
@@ -43,7 +42,7 @@ attach:     maxmsp-simple-subtractive-synth.zip
   <strong>radiogroup</strong>, <strong>gain~</strong> и <strong>ezdac~</strong> и нажимаем <em>ctrl+</em><em>shift+</em><em>e</em>.
   Должно получиться следующее <em>(</em><em>oscil2.</em><em>maxpat)</em>:</p>
 
-<p><img src="/img/simple-synth/oscil2.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955868/2be6f7b6-6698-11e4-9f7e-c509b6670a41.png"/></p>
 <p>
   Эта функция называется инкапсуляцией &ndash; она переносит выделенные объекты в отдельный патчер, создавая внутри него
   инлеты и аутлеты. Очень удобно, советую пользоваться почаще.</p>
@@ -55,13 +54,13 @@ attach:     maxmsp-simple-subtractive-synth.zip
   ударных. Это обычное перемножение двух сигналов, в нашем случае двух осцилляторов. Итак, дублируем наш осциллятор и
   добавляем объект *~ <em>(oscil3.maxpat)</em>:</p>
 
-<p><img src="/img/simple-synth/oscil3.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955867/2bdeaf2a-6698-11e4-8b31-fafade7d0839.png"/></p>
 <p>
   По схеме, <em>RM</em> сигнал будет подмешиваться в микс параллельно, поэтому мы просто сделаем для него отдельный
   регулятор громкости, а для двух осцилляторов прицепим обычный кроссфейд. Вот результат
   <em>(</em><em>oscil4.maxpat)</em>:</p>
 
-<p><img src="/img/simple-synth/oscil4.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955869/2befaffa-6698-11e4-8396-f49c0f2882e8.png"/></p>
 <p>
   Немного поясню некоторые детали. Объект <strong>dial</strong> по умолчанию выдает значения от <em>0&hellip;127</em>,
   поэтому мы делим его на <em>127</em> перед умножением на сигнал. Обрати внимание, что в объекте деления стоит в конце
@@ -73,7 +72,7 @@ attach:     maxmsp-simple-subtractive-synth.zip
   Думаю, не составит труда разобраться, как делается кроссфейд, поэтому двигаемся дальше. Опять выделяем только что
   созданные объекты кроме двух <strong>dial</strong> и инкапсулируем <em>(</em><em>oscil5.</em><em>maxpat)</em>:</p>
 
-<p><img src="/img/simple-synth/oscil5.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955871/2bf092f8-6698-11e4-9454-68eb46582cd2.png"/></p>
 <h2>
   Фильтр и огибающие</h2>
 <p>
@@ -84,7 +83,7 @@ attach:     maxmsp-simple-subtractive-synth.zip
   будет <em>0.5</em>, это используется для контроля громкости ноты с помощью <em>velocity</em>. На картинке ниже
   представлен уже готовый патч, оставим для анализа читателям, он не сложный <em>(filter-adsr1.maxpat)</em>:</p>
 
-<p><img src="http://pattr.ru/img/simple-synth/filter-adsr.png"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955870/2bf05cca-6698-11e4-870f-848cf32600b9.png"/></p>
 <h2>
   Напоследок</h2>
 <p>

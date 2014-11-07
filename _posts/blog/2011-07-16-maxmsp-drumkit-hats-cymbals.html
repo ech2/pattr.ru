@@ -6,7 +6,6 @@ categories: blog
 author: "OSCII"
 permalink: /drum-synthesis-in-maxmsp-hats-cymbal.html
 alias: /blog/chast-3-zhelezo
-attach: maxmsp-drumsynth-hats-cymbal.zip
 ---
 
 <p>Чтобы никто не почувствовал себя неловко, сразу скажу, что под словом «железо» я имею ввиду железные элементы
@@ -17,7 +16,7 @@ attach: maxmsp-drumsynth-hats-cymbal.zip
   звук, то есть его гармоники не располагаются на одном расстоянии друг от друга. Именно эта особенность придает звуку
   металлический оттенок. Имея это ввиду, приступаем к синтезу.</p>
 
-
+
 <h2>Хэт</h2>
 
 <p>Его очень просто синтезировать, достаточно просто подать белый шум через огибающую громкости и обрезать все низы
@@ -25,12 +24,12 @@ attach: maxmsp-drumsynth-hats-cymbal.zip
   патча <em>(hat1.maxpat)</em> приведен на рисунке ниже, он очень простой, нет смысла описывать его подробно, так как
   все объекты и техники уже были разобраны в предыдущих статьях.</p>
 
-<p><img src="/img/drumkit_synthesis/ferrum/hat1.png" alt="max/msp патч hat1.maxpat первый патч"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955679/0bb9a34a-6697-11e4-829c-a261f03d2c10.png" alt="max/msp патч hat1.maxpat первый патч"/></p>
 
 <p>Также можно выкрутить интересный шум с помощью FM синтеза. Нам даже не потребуется собирать свой синтезатор, в максе
   уже есть готовая абстракция <strong>simpleFM~</strong>. Сделав двойной щелчок, можно посмотреть внутренности.</p>
 
-<p><img src="http://pattr.ru/img/drumkit_synthesis/ferrum/simpleFM.png"
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955684/0bdf2502-6697-11e4-9dc0-9e37e0ed550a.png"
         alt="Простой FM синтезатор, имеющийся в составе Max/MSP"/></p>
 
 <p>Как видно, это простой двухоператорный <em>FM</em> синтезатор. С помощью левого входа задается частота основного
@@ -43,7 +42,7 @@ attach: maxmsp-drumsynth-hats-cymbal.zip
   произвольное значение. Также, чтобы сделать звук грязнее, сделаем побольше параметр <em>modulation index</em>. Ну и
   отфильтруем ненужные низкие частоты. Вот что получилось в итоге <em>(hat2.maxpat)</em>:</p>
 
-<p><img src="http://pattr.ru/img/drumkit_synthesis/ferrum/hat2.png" alt="max/msp патч hat2.maxpat fm синтез хэта"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955682/0bc52c7e-6697-11e4-8ab8-3ea26f7ef153.png" alt="max/msp патч hat2.maxpat fm синтез хэта"/></p>
 
 <p>Думаю, стоит объяснить, зачем здесь объекты <strong>sig~</strong>. Дело в том, что внутри синтезатора используются
   <em>MSP</em> объекты (те, что с <em>«тильдой»</em>), и чтобы они корректно работали, нужно подавать в них аудио
@@ -57,21 +56,21 @@ attach: maxmsp-drumsynth-hats-cymbal.zip
   такое умное название, ее суть очень проста для понимания: она заключается в перемножении двух сигналов между собой.
   Без лишней воды, привожу скрин патча <em>(cymb1.maxpat)</em>:</p>
 
-<p><img src="http://pattr.ru/img/drumkit_synthesis/ferrum/cymb1.png" alt="max/msp патч cymb1.maxpat rm синтез cymbal"/>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955683/0bca4ae2-6697-11e4-853c-b90ab357a5a7.png" alt="max/msp патч cymb1.maxpat rm синтез cymbal"/>
 </p>
 
 <p>Здесь есть один неизвестный объект – <strong>clip~</strong>. Его функция – ограничить сигнал по заданному диапазону,
   проще говоря, он обрезает все, что выше и ниже этого диапазона. Принцип работы показан на следующем рисунке. Слева
   показан исходный сигнал, справа – пропущенный через <strong>clip~</strong>.</p>
 
-<p><img src="http://pattr.ru/img/drumkit_synthesis/ferrum/clip.png" alt="Принцип работы Max/MSP объекта clip~"/></p>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955680/0bbd04ae-6697-11e4-9667-4839363008ce.png" alt="Принцип работы Max/MSP объекта clip~"/></p>
 
 <p>Сам объект может иметь два аргумента: первый задает нижний предел, а второй – верхний. Также эти пределы можно
   менять, подавая сигнал или сообщения во второй или третий входы, соответственно для нижнего и верхнего пределов.</p>
 
 <p>Также можно синтезировать симбалы с помощью <em>FM </em>синтеза. Посмотрите на следующий патч:</p>
 
-<p><img src="http://pattr.ru/img/drumkit_synthesis/ferrum/cymb2.png" alt="max/msp патч cymb2.maxpat fm синтез cymbal"/>
+<p><img src="https://cloud.githubusercontent.com/assets/1007225/4955681/0bc342d8-6697-11e4-9054-427b5152cd2f.png" alt="max/msp патч cymb2.maxpat fm синтез cymbal"/>
 </p>
 
 <p>Как можно заметить, в этом патче создана огибающая для для параметра <em>modulation index</em>. Она позволяет

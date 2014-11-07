@@ -6,7 +6,6 @@ categories: blog
 author:     "Bruce Lee, OSCII"
 permalink:  /pitch-shifting-in-pd.html
 alias:      /blog/sobiraem-pitchshifter-v-puredata
-attach:     puredata-pitchshifting.zip
 ---
 
 <p>
@@ -14,7 +13,7 @@ attach:     puredata-pitchshifting.zip
   звука приближается/удаляется от слушателя: наверное, каждый замечал, как меняется звук &laquo;гудка&raquo;
   прибывающего поезда. Это явление называется эффектом Доплера. Чтобы понять, в чем он заключается, взгляните на
   картинку:</p>
-<p><img alt="" src="http://pattr.ru/img/pitchshiftig_pd/pspd_1.jpg"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955831/fda851d8-6697-11e4-8ad4-7b205107ed15.jpg"/></p>
 
 <p>
   В ней машина движется к наблюдател <strong>B</strong>. Для этого наблюдателя частота сирены будет выше,
@@ -61,7 +60,7 @@ attach:     puredata-pitchshifting.zip
   * -1 = 10</i>, значит в <b>phasor~</b> будет положительное значение частоты, что будет понижать питч; грубо говоря,
   слайдер влево &mdash; питч понизился, слайдер вправо &mdash; повысился.</p>
 
-<p><img alt="" src="/img/pitchshiftig_pd/pspd_2.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955830/fda39b16-6697-11e4-94ac-bd6873b722cd.png"/></p>
 
 <p>
   Однако, и тут будут возникать те же проблемы, что и в гранулярном синтезаторе. Имеется в виду треск, возникающий при
@@ -73,19 +72,19 @@ attach:     puredata-pitchshifting.zip
 
 <p>Итоговый результат выглядит так:</p>
 
-<p><img alt="" src="http://pattr.ru/img/pitchshiftig_pd/pspd_3.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955833/fdaae268-6697-11e4-9399-bbf75f4c5e34.png"/></p>
 <p>
   Вот и все. Добавим лишь только немного более удобный контроль, чтобы можно было бы изменять питч в полутонах.
   Вычислить его можно по следующей формуле:</p>
 
-<p><img alt="" src="http://pattr.ru/img/pitchshiftig_pd/pspd_5.png" style="width: 348px; height: 100px;"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955835/fdb00248-6697-11e4-8be5-f58041378f0d.png" style="width: 348px; height: 100px;"/></p>
 <p>
   В ней <b>P</b> &ndash; изменение высоты звука в полутонах; <b>sr </b>&ndash; частота дискретизации; <b>win</b> &ndash;
   размер окна в миллисекундах.</p>
 <p>
   Эта же формула, только собранная в Pd:</p>
 
-<p><img alt="" src="http://pattr.ru/img/pitchshiftig_pd/pspd_4.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955834/fdafd3c2-6697-11e4-9a3f-9b6fc8805f2d.png"/></p>
 <p>
   Выход регулирует частоту <b>phasor~</b>.</p>
 <p>

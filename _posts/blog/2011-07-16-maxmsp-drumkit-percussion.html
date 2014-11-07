@@ -6,7 +6,6 @@ categories: blog
 author: "OSCII"
 permalink: /drum-synthesis-in-maxmsp-percussion.html
 alias: /blog/chast-4-perkussii
-attach: maxmsp-drumsynth-percussion.zip
 ---
 
 <p>
@@ -26,7 +25,7 @@ attach: maxmsp-drumsynth-percussion.zip
   чем больше резонанс, тем больше время реакции фильтра. Это свойство можно использовать и для извлечения звука, если
   подать на вход фильтра один лишь импульс.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/perc/impulse-responce.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955783/bd366fa4-6697-11e4-9461-1301fe3f3f76.png"/></p>
 <p>
   На верхнем рисунке виден сам импульс, а на нижнем &ndash; ответ фильтра на входящий в него импульс (думаю, многие
   слышали об <i>impulse response</i>). Как видно, фильтр при высоком заданном резонансе производит затухающие осцилляции
@@ -47,13 +46,13 @@ attach: maxmsp-drumsynth-percussion.zip
   амплитуда сигнала, поэтому ее нужно постоянно корректировать. Я заметил, что если значение gain в три раза больше
   значения резонанса, то максимальная амплитуда осцилляций находится почти на единице.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/perc/res-body.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955792/cbdbfed4-6697-11e4-9222-0efcdf2a3b6a.png"/></p>
 <p>
   Покрутите параметры патча и проследите за тем, как изменяется звук.</p>
 <p>
   Теперь увеличим количество фильтров до трех и настроим их параметры <i>(perc2.maxpat)</i>.</p>
 <p>
-  <img alt="" src="/img/drumkit_synthesis/perc/res-bodies.png"/></p>
+  <img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955782/bd31a000-6697-11e4-81c9-85c29310958a.png"/></p>
 <p>
   Ну здесь ничего сложного, три параллельных фильтра с разными параметрами. Стоит отметить только объект
   <b>omx.peaklim~</b> &ndash; это обычный лимитер, который не позволяет сигналу выходить за рамки <i>-1&hellip;1</i>, но

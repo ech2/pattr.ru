@@ -6,7 +6,6 @@ categories: blog
 author:     "Bruce Lee, OSCII"
 permalink:  /granular-synthesis-in-puredata.html
 alias:      /blog/granulyarnyy-sintez-v-puredata
-attach:     puredata-granular-synthesis.zip
 ---
 
 <p>
@@ -38,7 +37,7 @@ attach:     puredata-granular-synthesis.zip
   <strong>phasor~</strong> будет&nbsp; <em>1000ms </em>/ <em>50ms = 20Hz</em>. <em>50 мс </em>&mdash; это отрезок
   времени, за который <strong>phasor~ </strong>сделает одно колебание.</p>
 
-<p><img alt="" src="/img/grainpd/grain_1.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955637/b6eebf1c-6696-11e4-9171-eda44e01d6ae.png"/></p>
 
   Если включить аудио , и поиграть с намбер боксом grain size, мы услышим эту самую гранулу, то есть зацикленный
   фрагмент семпла будет проигрыватся с начала до той миллисекунды которая указана в grain size.</p>
@@ -58,7 +57,7 @@ attach:     puredata-granular-synthesis.zip
   <strong>phasor~</strong> завершит цикл и совершит переход от <em>1</em> к <em>0</em>.
 </p>
 
-<p><img alt="" src="/img/grainpd/grain_2.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955632/b6e33ae8-6696-11e4-9f35-c90bc72f40ae.png"/></p>
 
 <p>
   Однако, треск всё ещё остался, но уже по другой причине &ndash; он возникает при переходе с конца гранулы в начало.
@@ -68,7 +67,7 @@ attach:     puredata-granular-synthesis.zip
   косинусовой волны. Теперь остается перемножить выход с <strong>tabplay~</strong> и созданную огибающую.
 </p>
 
-<p><img alt="" src="/img/grainpd/grain_3.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955634/b6e7f6c8-6696-11e4-9bb3-bbd20f91ea65.png"/></p>
 
 <p>
   Итак, мы создали одну гранулу. Но гранулярный синтез по-настоящему проявляет себя, когда одновременно играют несколько
@@ -90,7 +89,7 @@ attach:     puredata-granular-synthesis.zip
   Теперь остается лишь скопировать большую часть первой гранулы (все, кроме того, что относится к объекту <strong>phasor~</strong>.
   Вот, что получилось:
 </p>
-<p><img alt="" src="/img/grainpd/grain_4.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955635/b6eb9e4a-6696-11e4-8c57-8a49923a79ab.png"/></p>
 
 <p>
   До сих пор мы могли перемещать гранулу по семплу только вручную. Но это абсолютно не пригодно для музыкальных целей. У
@@ -122,7 +121,7 @@ attach:     puredata-granular-synthesis.zip
   а на правый выход из объекта <strong>phasor~</strong>.
 </p>
 
-<p><img alt="" src="/img/grainpd/grain_5.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955633/b6e4895c-6696-11e4-895a-65726bc577be.png"/></p>
 
 <p>
   Перейдем ко второму методу. Табличному. С его помощью можно указывать путь перемещения гранулы, а также скорость.
@@ -146,7 +145,7 @@ attach:     puredata-granular-synthesis.zip
   <strong>grain_pos</strong> и радоваться :).
 </p>
 
-<p><img alt="" src="/img/grainpd/grain_6.png"/></p>
+<p><img alt="" src="https://cloud.githubusercontent.com/assets/1007225/4955636/b6ee79c6-6696-11e4-80de-fbb28c4a78bb.png"/></p>
 
 <h2>Заключение</h2>
 
