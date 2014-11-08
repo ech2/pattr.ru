@@ -5,3 +5,7 @@ paginate: 5
 sass:
     sass_dir: _scss
     style: compressed
+analytics:
+    provider: google
+    google: 
+        tracking_id: 'UA-56545218-1'
