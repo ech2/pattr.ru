@@ -16,7 +16,7 @@ permalink:  /course/basic/1.html
 
 ### Почитать
 
-1. [Max/MSP: Обзорная Статья](http://127.0.0.1:4000/getting-into-maxmsp.html).
+1. [Max/MSP: Обзорная Статья](/getting-into-maxmsp.html).
 2. Туториалы 1-7 (из документации, идущей с программой).
 
 ### Видео
