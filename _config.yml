@@ -1,5 +1,4 @@
-name: Pattr.ru
-markdown: redcarpet
+name: Pattr
 highligher: true
 paginate: 5
 sass:
