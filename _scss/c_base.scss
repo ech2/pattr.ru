@@ -26,6 +26,10 @@ body {
   p a, p a * { cursor: pointer; }
 }
 
+.no-bullets li {
+  list-style: none;
+}
+
 @mixin read-font {
   font-family: 'Roboto-Light';
   font-size: em-calc(16);

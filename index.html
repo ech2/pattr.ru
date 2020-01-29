@@ -2,40 +2,17 @@
 layout: blogroll
 title:  "Последние посты блога"
 ---
-<h1>Последние посты блога</h1>
+<article class="post">
 
-{% assign num_posts = site.categories.blog | size %}
-{% assign iter = 0  %}
+  <section>
+    <ul class="no-bullets">
+      {% for post in site.categories.blog %}
+        {% if post.hidden %}
+        {% else %}
+          <li>{{ post.date | date_to_string }}&nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </section>
 
-{% assign more_than = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign less_than = paginator.page | minus: 1 | times: paginator.per_page | plus: paginator.per_page %}
-
-{% for post in site.categories.blog %}
-    {% if iter >= more_than and less_than > iter  %}
-      <article class="post">
-        <header>
-          <h2>
-            {% if post.no_details == 1 %}
-              {{ post.title }}
-            {% else %}
-              <a href="{{ post.url }}">{{ post.title }}</a></h2>
-            {% endif %}
-          </h2>
-        </header>
-
-        <section>
-          {{ post.excerpt }}
-        </section>
-
-        <footer>
-          {% if post.no_details != 1 %}
-            <a href="{{ post.url }}">Читать далее</a>
-          {% else %}
-            <a href="" style="visibility: hidden;">&nbsp;</a>
-          {% endif %}
-          <span>{{ post.date | date_to_string }}&nbsp;&nbsp;{{ post.author }}</span>
-        </footer>
-      </article>
-  {% endif %}
-  {% assign iter = iter | plus: 1 %}
-{% endfor %}
+</article>
