@@ -16,6 +16,6 @@ permalink:  /course/basic/1.html
 
 ### Почитать
 
-1. [Max/MSP: Обзорная Статья](/getting-into-maxm sp.html).
+1. [Max/MSP: Обзорная Статья](/getting-into-maxmsp.html).
 2. Туториалы 1-7 (из документации, идущей с программой).
 3. Туториал «Basic MIDI».
