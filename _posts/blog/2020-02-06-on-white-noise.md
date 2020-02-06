@@ -104,7 +104,7 @@ permalink:  /on-white-noise.html
 
 Но мы можем генерировать любое количество гармоник осцилляторами. И в последней
 версии макса это довольно легко сделать с помощью многоканальных проводов.
-[Патч](/f/on_white_noise/3_oscbank.png):
+[Патч](/f/on_white_noise/3_oscbank.maxpat):
 
 ![](/f/on_white_noise/3_oscbank.png)
 
